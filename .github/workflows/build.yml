@@ -1,1 +1,15 @@
-{"name":"buildbrax34ks","on":["push","workflow_dispatch"],"jobs":{"build":{"runs-on":"ubuntu-latest","container":"vitasdk/vitasdk","steps":[{"uses":"actions/checkout@v4"},{"name":"Install vita2d","run":"vdpm vita2d"},{"name":"Build","run":"mkdir build && cd build && cmake .. && make"}]}}}
+{"name: buildbrax34ks
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: vitasdk/vitasdk
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: vdpm zlib libpng freetype libjpeg-turbo
+      - name: Build and install libvita2d
+        run: |
+          cd libvita2d
+          make
+          make installes":"actions/checkout@v4"},{"name":"Install vita2d","run":"vdpm vita2d"},{"name":"Build","run":"mkdir build && cd build && cmake .. && make"}]}}}
