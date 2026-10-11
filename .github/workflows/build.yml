@@ -1,12 +1,1 @@
-name: buildbrax34ks
-on: [push, workflow_dispatch]
-jobs:
-build:
-runs-on: ubuntu-latest
-container: vitasdk/vitasdk
-steps:
-- uses: actions/checkout@v4
-- name: Install dependencies
-run: vdpm zlib libpng freetype libjpeg-turbo
-- name: Build and install
-run: cd libvita2d && make && make install
+{"name":"buildbrax34ks","on":["push","workflow_dispatch"],"jobs":{"build":{"runs-on":"ubuntu-latest","container":"vitasdk/vitasdk","steps":[{"uses":"actions/checkout@v4"},{"run":"vdpm zlib libpng freetype libjpeg-turbo"},{"run":"cd libvita2d && make && make install"}]}}}
